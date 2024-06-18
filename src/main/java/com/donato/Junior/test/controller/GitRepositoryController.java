@@ -4,11 +4,9 @@ import com.donato.Junior.test.model.GitRepositoryResponse;
 import com.donato.Junior.test.service.GitRepositoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -24,7 +22,18 @@ public class GitRepositoryController {
 
     @GetMapping("/repositoryName/{name}")
     public ResponseEntity<List<GitRepositoryResponse>> getRepositoryByName(@PathVariable String name){
-        List<GitRepositoryResponse> response = service.getRepositoryByName(name);
+        List<GitRepositoryResponse> response = service.listAllRepositoryByName(name);
         return ResponseEntity.ok(response);
+    }
+    @PostMapping("/username/csv/{username}")
+    public ResponseEntity<Void> csvByUsername(@PathVariable String username) throws FileNotFoundException{
+        service.createCsvByUsername(username);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/repositoryName/csv/{repositoryName}")
+    public ResponseEntity<Void> csvByRepositoryName(@PathVariable String repositoryName) throws FileNotFoundException{
+        service.createCsvByRepositoryName(repositoryName);
+        return ResponseEntity.noContent().build();
     }
 }

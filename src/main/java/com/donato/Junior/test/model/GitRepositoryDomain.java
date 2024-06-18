@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GitRepositoryDomain {
-    private String name;
+    private String full_name;
     private String description;
     private String html_url;
     private String created_at;
