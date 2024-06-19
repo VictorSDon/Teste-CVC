@@ -16,6 +16,7 @@
 - 19/06 - implementação do swagger - configuração basica
 - 19/06 - comentário da aplicação
 - 19/06 - criação da coleção do postman - gerado a partir do swagger
+- 19/06 - adicionei a tratativa de erros no service.
 
 ## Como Rodar
 

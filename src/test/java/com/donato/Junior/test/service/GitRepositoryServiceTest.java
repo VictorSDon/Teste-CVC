@@ -19,10 +19,6 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 @ExtendWith(MockitoExtension.class)
 public class GitRepositoryServiceTest {
     @Mock
@@ -78,7 +74,7 @@ public class GitRepositoryServiceTest {
     }
 
     @Test
-    public void ShouldCreateCsvByRepositoryName() throws FileNotFoundException{
+    public void shouldCreateCsvByRepositoryName() throws FileNotFoundException{
         when(repository.getRepositoryByName(name+" in:name"))
                 .thenReturn(gitRepositorySearchDomain);
 

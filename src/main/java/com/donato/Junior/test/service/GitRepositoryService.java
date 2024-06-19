@@ -52,10 +52,15 @@ public class GitRepositoryService {
 
 //this function creates a csv file with all the information defined on the function,
 // for all the repositories of a specific user
-    public void createCsvByUsername(String username) throws FileNotFoundException {
+    public void createCsvByUsername(String username){
 //        configuring the file writer
         File csvRepository = new File ("RepositoryByUser.csv");
-        PrintWriter out = new PrintWriter(csvRepository);
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(csvRepository);
+        } catch (FileNotFoundException e){
+            throw new RuntimeException("file not found");
+        }
 //        retrieving the repositories to be written
         List<GitRepositoryResponse> toSave = listAllRepositoryByUser(username);
 //writing the information on the file
@@ -70,9 +75,14 @@ public class GitRepositoryService {
     }
     //this function creates a csv file with all the information defined on the function,
 // for all the repositories with the matching name
-    public void createCsvByRepositoryName(String repositoryName) throws FileNotFoundException {
+    public void createCsvByRepositoryName(String repositoryName)  {
         File csvRepository = new File ("RepositoryByName.csv");
-        PrintWriter out = new PrintWriter(csvRepository);
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(csvRepository);
+        } catch (FileNotFoundException e){
+            throw new RuntimeException("file not found");
+        }
 
         List<GitRepositoryResponse> toSave = listAllRepositoryByName(repositoryName);
 
