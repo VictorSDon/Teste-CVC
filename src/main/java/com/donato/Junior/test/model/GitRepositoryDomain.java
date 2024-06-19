@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//model that requests the data from the GitHub API
 @Data
 @Builder
 @AllArgsConstructor

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//response model for the parsed information from the GitHub API
 @Data
 @Builder
 @AllArgsConstructor

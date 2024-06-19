@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+// The search route returns additional metadata requiring a new object structure
 @Data
 @Builder
 @AllArgsConstructor
