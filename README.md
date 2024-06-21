@@ -17,6 +17,7 @@
 - 19/06 - comentário da aplicação
 - 19/06 - criação da coleção do postman - gerado a partir do swagger
 - 19/06 - adicionei a tratativa de erros no service.
+- 20/06 - pesquisei sobre a aplicação do sistema de cache usando o redis, e me pareceu complexo demais para implementar a tempo
 
 ## Como Rodar
 
